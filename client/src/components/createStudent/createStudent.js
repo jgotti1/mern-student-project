@@ -60,11 +60,11 @@ export default function Create() {
         />
         <TextField
           id="outlined-basic"
-          label="Section"
+          label="Location"
           variant="outlined"
-          value={student.section}
+          value={student.location}
           onChange={(event) => {
-            setStudent({ ...student, section: event.target.value });
+            setStudent({ ...student, location: event.target.value });
           }}
         />
         <Button variant="contained" color="primary" onClick={creatStudent}>

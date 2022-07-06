@@ -42,7 +42,7 @@ export default function ShowStudent() {
               <TableCell>Name</TableCell>
               <TableCell align="right">Registration Number</TableCell>
               <TableCell align="right">Grade</TableCell>
-              <TableCell align="right">Section</TableCell>
+              <TableCell align="right">Location</TableCell>
               <TableCell align="right">Action</TableCell>
             </TableRow>
           </TableHead>
@@ -54,7 +54,7 @@ export default function ShowStudent() {
                 </TableCell>
                 <TableCell align="right">{student.regNo}</TableCell>
                 <TableCell align="right">{student.grade}</TableCell>
-                <TableCell align="right">{student.section}</TableCell>
+                <TableCell align="right">{student.location}</TableCell>
                 <TableCell align="right">
                   <IconButton
                     aria-label="delete"

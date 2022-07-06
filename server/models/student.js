@@ -4,9 +4,9 @@ const studentSchema = mongoose.Schema({
   regNo: Number,
   studentName: String,
   grade: String,
-  section: {
+  location: {
     type: String,
-    default: "Section Here",
+    default: "location",
   },
 });
 

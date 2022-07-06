@@ -21,5 +21,3 @@ mongoose
   // .connect(CONNECTION_URL)
   .then(() => app.listen(PORT, () => console.log(`Mongo connection is established and running on port: ${PORT}`)))
   .catch((err) => console.log(err.message));
-
-// mongoose.set("useFindAndModify", false);
