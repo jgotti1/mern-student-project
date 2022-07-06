@@ -20,6 +20,11 @@ const useStyles = makeStyles({
 export default function ShowStudent() {
   const classes = useStyles();
   const [studentsList, setStudentsList] = useState([]);
+  const deleteStudent = (id) => {
+    axios.delete(`http://localhost:5000/students/${id}`).then(() => {
+      window.location.reload(false);
+    });
+  };
 
   useEffect(() => {
     axios.get("http://localhost:5000/students").then((allStudents) => {
@@ -51,7 +56,13 @@ export default function ShowStudent() {
                 <TableCell align="right">{student.grade}</TableCell>
                 <TableCell align="right">{student.section}</TableCell>
                 <TableCell align="right">
-                  <IconButton aria-label="delete" className={classes.margin}>
+                  <IconButton
+                    aria-label="delete"
+                    className={classes.margin}
+                    onClick={() => {
+                      deleteStudent(student._id);
+                    }}
+                  >
                     <DeleteIcon />
                   </IconButton>
                 </TableCell>
