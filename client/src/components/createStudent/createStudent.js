@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,6 +22,11 @@ export default function Create() {
     section: "",
   });
 
+  const creatStudent = () => {
+    axios.post("http://localhost:5000/students", student).then(() => {
+      window.location.reload(false);
+    });
+  };
   return (
     <>
       <h2>Create Student</h2>
@@ -61,7 +67,7 @@ export default function Create() {
             setStudent({ ...student, section: event.target.value });
           }}
         />
-        <Button variant="contained" color="primary">
+        <Button variant="contained" color="primary" onClick={creatStudent}>
           Create
         </Button>
       </form>
